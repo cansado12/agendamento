@@ -1,0 +1,44 @@
+spring:
+  application:
+    name:agendamento
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/agendamentodb?useTimezone=true&serverTimezone=UTC
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+
+
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+
+
+logging:
+  level:
+    root: WARN
+
+springdoc:
+  api-docs:
+    path-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+
+
+
+
+
+
+
